@@ -19,9 +19,6 @@ driver.get("https://saultonline.com/lowest-gas-prices/")
 
 items = driver.find_element(By.TAG_NAME, "table")
 gasdata = items.text
-#gasdata = items.text.replace("\n","/")
-#print(gasdata)
-#print()
 
 headings = {'Station','Time'}
 cities = {'Echo Bay','Sault Ste Marie','Bruce Mines','Thessalon','Desbarats'}
@@ -35,7 +32,6 @@ for city in cities:
   gasdata = gasdata.replace(f"\n{city}\n",f", {city}/")
 print(gasdata)
 print()
-#print(type(items.text)) #<class 'str'>
 
 #Copies Gas Station Data to CSV (can be used for diagnosis)
 text_file = open("ssmgas.csv", "w")
